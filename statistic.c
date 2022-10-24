@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/** INCOMPLETO **/
+// INCOMPLETO
 
 int main(int argc, char **argv) {
 	int total_people;
@@ -36,9 +36,9 @@ int main(int argc, char **argv) {
 
 	mean = age_accumulator / total_people;
 
-	printf("Moda das idades: %d\n", mode); // Comportamento inesperado
+	//printf("Moda das idades: %d\n", mode);
 	printf("Media das idades: %d\n", mean);
-	printf("Mediana das idades: %d\n", median); // Comportamento inesperado
+	//printf("Mediana das idades: %d\n", median);
 	printf("Idade da pessoa mais velha: %d\n", age_of_the_oldest_person);
 	printf("Idade da pessoa mais nova: %d\n", age_of_the_youngest_person);
 
