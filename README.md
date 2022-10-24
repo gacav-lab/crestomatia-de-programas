@@ -1,4 +1,4 @@
-# Crestomatia de Programas --- Statistic
+# Crestomatia de Programas - Statistic
 
 ## Linguagens
 - R;
