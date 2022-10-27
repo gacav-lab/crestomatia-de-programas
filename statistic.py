@@ -12,8 +12,8 @@ age_accumulator = age
 age_of_the_oldest_person = age
 age_of_the_youngest_person = age
 
-for counter in range(1, total_people + 1):
-    age = int(input("Idade da pessoa 1: "))
+for counter in range(2, total_people + 1):
+    age = int(input("Idade da pessoa {}: ".format(counter)))
 
     age_accumulator += age;
 
