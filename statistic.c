@@ -16,6 +16,7 @@ int main(int argc, char **argv) {
 	printf("Idade da pessoa 1: ");
 	scanf("%d", &age);
 
+	median = age;
 	age_accumulator = age;
 	age_of_the_oldest_person = age;
 	age_of_the_youngest_person = age;
