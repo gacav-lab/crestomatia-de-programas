@@ -1,5 +1,5 @@
 public class Statistic {
-	// Incompleto
+	// INCOMPLETO
 
 	public static void main(String[] args) {
 		// TODO
