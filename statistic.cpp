@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 	}
 
 	mean = age_accumulator / total_people;
-	median = f_median(&ages[0], total_people);
+	median = f_median(ages, total_people);
 
 	cout << "Media das idades: " << mean << endl;
 	cout << "Mediana das idades: " << median << endl;
@@ -71,7 +71,7 @@ void bubble_sort(int *ages, int total_people) {
 int f_median(int *ages, int total_people) {
 	int half;
 
-	bubble_sort(&ages[0], total_people);
+	bubble_sort(ages, total_people);
 
 	half = total_people / 2;
 
