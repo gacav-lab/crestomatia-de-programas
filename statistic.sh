@@ -7,11 +7,10 @@ swap() {
 }
 
 bubble_sort() {
-  local i
-  local j
+  local i j
 
-  for i in $(seq 0 $((total_people - 1))); do
-    for j in $(seq 0 $((total_people - 1))); do
+  for i in `seq 0 $((total_people - 1))`; do
+    for j in `seq 0 $((total_people - 1))`; do
       if [ ${ages[i]} -gt ${ages[j]} ]; then
         swap
       fi
@@ -43,7 +42,7 @@ age_accumulator=$age
 age_of_the_oldest_person=$age
 age_of_the_youngest_person=$age
 
-for i in $(seq 1 $((total_people - 1))); do
+for i in `seq 1 $((total_people - 1))`; do
 	read -p "Idade da pessoa $((i + 1)): " age
 
 	if [ $age -lt $age_of_the_youngest_person ]; then

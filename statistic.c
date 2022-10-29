@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
 	}
 
 	mean = age_accumulator / total_people;
-	median = f_median(total_people, &ages[0]);
+	median = f_median(ages, total_people);
 
 	printf("Media das idades: %d\n", mean);
 	printf("Mediana das idades: %d\n", median);
@@ -69,7 +69,7 @@ void bubble_sort(int *ages, int total_people) {
 int f_median(int *ages, int total_people) {
 	int half;
 
-	bubble_sort(&ages[0], total_people);
+	bubble_sort(ages, total_people);
 
 	half = total_people / 2;
 
