@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 void swap(int *ages, int i, int j);
+int f_median(int *ages, int total_people);
 void bubble_sort(int *ages, int total_people);
-int f_median(int total_people, int *ages);
 
 int main(int argc, char **argv) {
     int *ages = NULL;
@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 		if(age > age_of_the_oldest_person) {
 			age_of_the_oldest_person = age;
 		}
-		
+
 		age_accumulator += age;
 		*(ages + i) = age;
 	}
@@ -66,7 +66,7 @@ void bubble_sort(int *ages, int total_people) {
     }
 }
 
-int f_median(int total_people, int *ages) {
+int f_median(int *ages, int total_people) {
 	int half;
 
 	bubble_sort(&ages[0], total_people);

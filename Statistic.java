@@ -15,7 +15,7 @@ public class Statistic {
 		}
 	}
 
-	public static int FMedian(int totalPeople, int ages[]) {
+	public static int FMedian(int ages[], int totalPeople) {
 		int half;
 
 		bubbleSort(ages, totalPeople);
@@ -47,7 +47,7 @@ public class Statistic {
 		ageOfTheYoungestPerson = age;
 		ages = new int[totalPeople];
 		ages[0] = age;
-		
+
 		for(int i = 1; i < totalPeople; i++) {
 			System.out.printf("Idade da pessoa %d: ", i + 1);
 			age = Integer.parseInt(System.console().readLine());
@@ -59,13 +59,13 @@ public class Statistic {
 			if(age > ageOfTheOldestPerson) {
 				ageOfTheOldestPerson = age;
 			}
-			
+
 			ageAccumulator += age;
 			ages[i] = age;
 		}
 
 		mean = ageAccumulator / totalPeople;
-		median = FMedian(totalPeople, ages);
+		median = FMedian(ages, totalPeople);
 
 		System.out.println("Media das idades: " + mean);
 		System.out.println("Mediana das idades: " + median);
