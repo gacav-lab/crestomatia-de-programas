@@ -1,11 +1,13 @@
-public class Statistic {
+class Statistic {
 	public static void swap(int ages[], int i, int j) {
 		ages[i] = ages[i] + ages[j];
 		ages[j] = ages[i] - ages[j];
 		ages[i] = ages[i] - ages[j];
 	}
 
-	public static void bubbleSort(int ages[], int totalPeople) {
+	public static void bubbleSort(int ages[]) {
+		int totalPeople = ages.length;
+		
 		for(int i = 0; i < totalPeople; i++) {
 		    for(int j = 0; j < totalPeople; j++) {
 		        if(ages[i] > ages[j]) {
@@ -15,10 +17,10 @@ public class Statistic {
 		}
 	}
 
-	public static int FMedian(int ages[], int totalPeople) {
-		int half;
+	public static int FMedian(int ages[]) {
+		int half, totalPeople = ages.length;
 
-		bubbleSort(ages, totalPeople);
+		bubbleSort(ages);
 
 		half = totalPeople / 2;
 
@@ -64,8 +66,8 @@ public class Statistic {
 			ages[i] = age;
 		}
 
+		median = FMedian(ages);
 		mean = ageAccumulator / totalPeople;
-		median = FMedian(ages, totalPeople);
 
 		System.out.println("Media das idades: " + mean);
 		System.out.println("Mediana das idades: " + median);
