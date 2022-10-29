@@ -7,7 +7,7 @@ class Statistic {
 
 	public static void bubbleSort(int ages[]) {
 		int totalPeople = ages.length;
-		
+
 		for(int i = 0; i < totalPeople; i++) {
 		    for(int j = 0; j < totalPeople; j++) {
 		        if(ages[i] > ages[j]) {
