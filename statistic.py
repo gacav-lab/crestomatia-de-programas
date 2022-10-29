@@ -5,14 +5,17 @@ def swap(ages, i, j):
 	ages[j] = ages[i] - ages[j]
 	ages[i] = ages[i] - ages[j]
 
-def bubble_sort(ages, total_people):
+def bubble_sort(ages):
+	total_people = len(ages)
 	for i in range(total_people):
 		for j in range(total_people):
 			if(ages[i] > ages[j]):
 				swap(ages, i, j)
 
-def f_median(ages, total_people):
-	bubble_sort(ages, total_people)
+def f_median(ages):
+	total_people = len(ages)
+	
+	bubble_sort(ages)
 
 	half = total_people / 2
 
@@ -44,8 +47,8 @@ for counter in range(2, total_people + 1):
 	ages.append(age)
 	age_accumulator = age_accumulator + age
 
+median = f_median(ages)
 mean = age_accumulator / total_people
-median = f_median(ages, total_people)
 
 print("Media das idades:", mean)
 print("Mediana das idades:", median)
