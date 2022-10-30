@@ -1,7 +1,6 @@
 # Crestomatia de Programas - Statistic
 
 ## Linguagens
-- R;
 - C;
 - C++;
 - Java;
