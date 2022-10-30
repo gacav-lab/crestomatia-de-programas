@@ -9,8 +9,8 @@ void bubble_sort(int *ages, int total_people);
 
 int main(int argc, char **argv) {
     int *ages = NULL;
+    int total_people, age_accumulator, mean, median, age;
     int age_of_the_oldest_person, age_of_the_youngest_person;
-    int half, total_people, age_accumulator, mean, median, age;
 
 	cout << "Total de pessoas: ";
 	cin >> total_people;
@@ -69,16 +69,9 @@ void bubble_sort(int *ages, int total_people) {
 }
 
 int f_median(int *ages, int total_people) {
-	int half;
+	int half = total_people / 2;
 
 	bubble_sort(ages, total_people);
 
-	half = total_people / 2;
-
-	if(total_people % 2 != 0) {
-	    return ages[half];
-	} else {
-		half--;
-	    return (ages[half] + ages[half + 1]) / 2;
-	}
+	return (total_people % 2 != 0) ? ages[half] : (ages[--half] + ages[half + 1]) / 2;
 }
