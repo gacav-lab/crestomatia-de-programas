@@ -3,9 +3,29 @@
 
 using namespace std;
 
-void swap(int *ages, int i, int j);
-int f_median(int *ages, int total_people);
-void bubble_sort(int *ages, int total_people);
+void swap(int *ages, int i, int j) {
+	ages[i] = ages[i] + ages[j];
+	ages[j] = ages[i] - ages[j];
+	ages[i] = ages[i] - ages[j];
+}
+
+void bubble_sort(int *ages, int total_people) {
+    for(int i = 0; i < total_people; i++) {
+        for(int j = 0; j < total_people; j++) {
+            if(ages[i] > ages[j]) {
+                swap(ages, i, j);
+            }
+        }
+    }
+}
+
+int f_median(int *ages, int total_people) {
+	int half = total_people / 2;
+
+	bubble_sort(ages, total_people);
+
+	return (total_people % 2 != 0) ? ages[half] : (ages[--half] + ages[half + 1]) / 2;
+}
 
 int main(int argc, char **argv) {
     int *ages = NULL;
@@ -50,28 +70,4 @@ int main(int argc, char **argv) {
 	cout << "Idade da pessoa mais nova: " << age_of_the_youngest_person << endl;
 
 	return EXIT_SUCCESS;
-}
-
-void swap(int *ages, int i, int j) {
-	ages[i] = ages[i] + ages[j];
-	ages[j] = ages[i] - ages[j];
-	ages[i] = ages[i] - ages[j];
-}
-
-void bubble_sort(int *ages, int total_people) {
-    for(int i = 0; i < total_people; i++) {
-        for(int j = 0; j < total_people; j++) {
-            if(ages[i] > ages[j]) {
-                swap(ages, i, j);
-            }
-        }
-    }
-}
-
-int f_median(int *ages, int total_people) {
-	int half = total_people / 2;
-
-	bubble_sort(ages, total_people);
-
-	return (total_people % 2 != 0) ? ages[half] : (ages[--half] + ages[half + 1]) / 2;
 }

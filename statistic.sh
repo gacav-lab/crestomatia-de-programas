@@ -23,11 +23,7 @@ f_median() {
 
 	bubble_sort
 
-	if [ $((total_people % 2)) -ne 0 ]; then
-		echo ${ages[half]}
-	else
-		echo $(((ages[--half] + ages[$((half + 1))]) / 2))
-	fi
+	[ $((total_people % 2)) -ne 0 ] && echo ${ages[half]} || echo $(((ages[--half] + ages[$((half + 1))]) / 2))
 }
 
 read -p "Total de pessoas: " total_people

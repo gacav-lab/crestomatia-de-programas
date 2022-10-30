@@ -22,7 +22,7 @@ class Statistic {
 
 		bubbleSort(ages);
 
-		return (totalPeople % 2 != 0) ? ages[--half] : (ages[half] + ages[half + 1]) / 2;
+		return (totalPeople % 2 != 0) ? ages[half] : (ages[--half] + ages[half + 1]) / 2;
 	}
 
 	public static void main(String[] args) {
