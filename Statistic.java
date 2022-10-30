@@ -18,24 +18,17 @@ class Statistic {
 	}
 
 	public static int FMedian(int ages[]) {
-		int half, totalPeople = ages.length;
+		int totalPeople = ages.length, half = totalPeople / 2;
 
 		bubbleSort(ages);
 
-		half = totalPeople / 2;
-
-		if(totalPeople % 2 != 0) {
-			return ages[half];
-		} else {
-			half--;
-			return (ages[half] + ages[half + 1]) / 2;
-		}
+		return (totalPeople % 2 != 0) ? ages[--half] : (ages[half] + ages[half + 1]) / 2;
 	}
 
 	public static void main(String[] args) {
 		int[] ages = null;
 		int ageOfTheOldestPerson, ageOfTheYoungestPerson;
-		int half, totalPeople, ageAccumulator, mean, median, age;
+		int totalPeople, ageAccumulator, mean, median, age;
 
 		System.out.print("Total de pessoas: ");
 		totalPeople = Integer.parseInt(System.console().readLine());
