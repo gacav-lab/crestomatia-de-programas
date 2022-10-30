@@ -24,7 +24,7 @@ int f_median(int *ages, int total_people) {
 
 	bubble_sort(ages, total_people);
 
-	return (total_people % 2 != 0) ? ages[half] : (ages[--half] + ages[half + 1]) / 2;
+	return (total_people % 2 != 0) ? ages[half] : (ages[half - 1] + ages[half]) / 2;
 }
 
 int main(int argc, char **argv) {
