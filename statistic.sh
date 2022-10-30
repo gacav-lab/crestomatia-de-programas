@@ -19,17 +19,14 @@ bubble_sort() {
 }
 
 f_median() {
-	local half
+	local half=$((total_people / 2))
 
 	bubble_sort
 
-	half=$((total_people / 2))
-
 	if [ $((total_people % 2)) -ne 0 ]; then
-		echo "${ages[half]}"
+		echo ${ages[half]}
 	else
-		((half--))
-		echo "$(((ages[half] + ages[$((half + 1))]) / 2))"
+		echo $(((ages[--half] + ages[$((half + 1))]) / 2))
 	fi
 }
 
