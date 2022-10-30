@@ -7,6 +7,7 @@ def swap(ages, i, j):
 
 def bubble_sort(ages):
 	total_people = len(ages)
+
 	for i in range(total_people):
 		for j in range(total_people):
 			if(ages[i] > ages[j]):
@@ -14,16 +15,11 @@ def bubble_sort(ages):
 
 def f_median(ages):
 	total_people = len(ages)
+	half = total_people // 2
 
 	bubble_sort(ages)
 
-	half = total_people // 2
-
-	if(total_people % 2 != 0):
-		return ages[half]
-	else:
-		half = half - 1
-		return (ages[half] + ages[half + 1]) // 2
+	return (total_people % 2 != 0) and ages[half] or (ages[half - 1] + ages[half]) // 2
 
 total_people = int(input("Total de pessoas: "))
 age = int(input("Idade da pessoa 1: "))
