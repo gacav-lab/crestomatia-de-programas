@@ -14,16 +14,16 @@ def bubble_sort(ages):
 
 def f_median(ages):
 	total_people = len(ages)
-	
+
 	bubble_sort(ages)
 
-	half = total_people / 2
+	half = total_people // 2
 
 	if(total_people % 2 != 0):
 		return ages[half]
 	else:
 		half = half - 1
-		return (ages[half] + ages[half + 1]) / 2
+		return (ages[half] + ages[half + 1]) // 2
 
 total_people = int(input("Total de pessoas: "))
 age = int(input("Idade da pessoa 1: "))
@@ -48,7 +48,7 @@ for counter in range(2, total_people + 1):
 	age_accumulator = age_accumulator + age
 
 median = f_median(ages)
-mean = age_accumulator / total_people
+mean = age_accumulator // total_people
 
 print("Media das idades:", mean)
 print("Mediana das idades:", median)
