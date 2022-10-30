@@ -22,8 +22,8 @@ int main(int argc, char **argv) {
 	age_accumulator = age;
 	age_of_the_oldest_person = age;
 	age_of_the_youngest_person = age;
-	ages = (int*) malloc(total_people * sizeof(int));
-	*ages = age;
+	ages = new int[total_people];
+	ages[0] = age;
 
 	for(int i = 1; i < total_people; i++) {
 		cout << "Idade da pessoa " << i + 1 << ": ";
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 		}
 
 		age_accumulator += age;
-		*(ages + i) = age;
+		ages[i] = age;
 	}
 
 	mean = age_accumulator / total_people;
@@ -53,16 +53,16 @@ int main(int argc, char **argv) {
 }
 
 void swap(int *ages, int i, int j) {
-    *(ages + i) = *(ages + i) + *(ages + j);
-    *(ages + j) = *(ages + i) - *(ages + j);
-    *(ages + i) = *(ages + i) - *(ages + j);
+	ages[i] = ages[i] + ages[j];
+	ages[j] = ages[i] - ages[j];
+	ages[i] = ages[i] - ages[j];
 }
 
 void bubble_sort(int *ages, int total_people) {
     for(int i = 0; i < total_people; i++) {
         for(int j = 0; j < total_people; j++) {
-            if(*(ages + i) > *(ages + j)) {
-                swap(&ages[0], i, j);
+            if(ages[i] > ages[j]) {
+                swap(ages, i, j);
             }
         }
     }
@@ -76,9 +76,9 @@ int f_median(int *ages, int total_people) {
 	half = total_people / 2;
 
 	if(total_people % 2 != 0) {
-	    return *(ages + half);
+	    return ages[half];
 	} else {
 		half--;
-	    return (*(ages + half) + *(ages + half + 1)) / 2;
+	    return (ages[half] + ages[half + 1]) / 2;
 	}
 }
